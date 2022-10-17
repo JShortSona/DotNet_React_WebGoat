@@ -21,7 +21,7 @@ steps:
 - task: NexusIqPipelineTask@1
   displayName: 'Nexus IQ Eval - Source Files'
   inputs:
-    nexusIqService: 'iq.ngrok.io'
+    nexusIqService: 'Ngrok-Free-NXLC'
     applicationId: 'dotnetcore-react'
     stage: 'build'
     scanTargets: '**/*.nupkg, **/*.dll, **/*.js'
@@ -36,7 +36,7 @@ steps:
 - task: NexusIqPipelineTask@1
   displayName: 'Nexus IQ Eval - Nuget'
   inputs:
-    nexusIqService: 'iq.ngrok.io'
+    nexusIqService: 'Ngrok-Free-NXLC'
     applicationId: 'dotnetcore-react'
     stage: 'stage-release'
     scanTargets: '**/*.nupkg, **/*.js'
@@ -51,16 +51,16 @@ steps:
 - task: NexusIqPipelineTask@1
   displayName: 'Nexus IQ Eval - Release'
   inputs:
-    nexusIqService: 'iq.ngrok.io'
+    nexusIqService: 'Ngrok-Free-NXLC'
     applicationId: 'dotnetcore-react'
     stage: 'release'
     scanTargets: '**/*.js, **/Release/**/*.dll'
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'dotnetcore-react'
-    publishLocation: 'Container'
+#- task: PublishBuildArtifacts@1
+#  inputs:
+#    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+#    ArtifactName: 'dotnetcore-react'
+#    publishLocation: 'Container'
 
 
     
