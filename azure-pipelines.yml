@@ -38,7 +38,7 @@ steps:
   inputs:
     nexusIqService: 'Ngrok-Free-NXLC'
     applicationId: 'dotnetcore-react'
-    stage: 'stage-release'
+    stage: 'build'
     scanTargets: '**/*.nupkg, **/*.js'
 
 - task: VSBuild@1
