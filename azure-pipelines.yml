@@ -18,13 +18,13 @@ variables:
 
 steps:
 
-- task: NexusIqPipelineTask@1
-  displayName: 'Nexus IQ Eval - Source Files'
-  inputs:
-    nexusIqService: 'Ngrok-Free-NXLC'
-    applicationId: 'dotnetcore-react'
-    stage: 'build'
-    scanTargets: '**/*.nupkg, **/*.dll, **/*.js'
+# - task: NexusIqPipelineTask@1
+#   displayName: 'Nexus IQ Eval - Source Files'
+#   inputs:
+#     nexusIqService: 'Ngrok-Free-NXLC'
+#     applicationId: 'dotnetcore-react'
+#     stage: 'build'
+#     scanTargets: '**/*.nupkg, **/*.dll, **/*.js'
 
 - task: NuGetToolInstaller@1
 
@@ -48,13 +48,13 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: NexusIqPipelineTask@1
-  displayName: 'Nexus IQ Eval - Release'
-  inputs:
-    nexusIqService: 'Ngrok-Free-NXLC'
-    applicationId: 'dotnetcore-react'
-    stage: 'release'
-    scanTargets: '**/*.js, **/Release/**/*.dll'
+# - task: NexusIqPipelineTask@1
+#   displayName: 'Nexus IQ Eval - Release'
+#   inputs:
+#     nexusIqService: 'Ngrok-Free-NXLC'
+#     applicationId: 'dotnetcore-react'
+#     stage: 'release'
+#     scanTargets: '**/*.js, **/Release/**/*.dll'
 
 #- task: PublishBuildArtifacts@1
 #  inputs:
